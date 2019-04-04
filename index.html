@@ -5,12 +5,19 @@
     <title>TriviaGame</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Astloch" rel="stylesheet">
 </head>
-        <body>
-                <h1>Total Trivial Trivia</h1>
-                <div id="displayQues"></div>
+ <body>
+         <div class="container-fluid py-5 my-5 text-center">
+           <h1 class="text-c">Totally Trivial Trivia!</h1>
+           <button type="button" class="btn btn-primary btn-lg btn-block px-2 mx-2 text-bottom" id="btn1">Start</button>
+                <div  id="container">
+                <div><h1 class="text-c">Time left-<span>00:</span><span id="timer"></span> </h1>
+                        </div> 
+                        <div id="displayQues"></div>
+                </div>
+        </div>                  
            <script src="assets/javascript/app.js">
            </script>
-           
-        </body>
+</body>
 </html>

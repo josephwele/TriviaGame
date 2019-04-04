@@ -1,4 +1,9 @@
-
+function startGame(){
+    //selecting the button and saving to a variable
+    // adding a class name d-none to make it disappear
+    document.getElementById("btn1").classList.add("d-none");
+    //displaying again the container
+    document.getElementById("container").classList.remove("d-none");
 // data for the question displayed to user
 const myQuestions = [
     {
@@ -54,11 +59,56 @@ for(var l in myQuestions){
   for(let i=0;i<3;i++){
       //to creat input button 
   var inp = `<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="${myQuestions[l].answers[i]}" name="customRadioInline1" class="custom-control-input">
+  <input type="radio" id="${myQuestions[l].answers[i]}" name="customRadioInline${l}" class="custom-control-input">
   <label class="custom-control-label" for="${myQuestions[l].answers[i]}">${myQuestions[l].answers[i]}</label>
 </div>`;
 //setting the content of the div to the created input button
 containDiv.innerHTML+=inp;}
-Q1.appendChild(containDiv);
+element.appendChild(containDiv);
 
 }
+document.addEventListener("click",function(){
+    
+})
+var correct = 0, incorrect =0;
+
+// set time limit for the question to be 30 seconds
+var time = 30;
+// every one second the function is called 
+var timer = setInterval(function(){
+    // time is decremented by 1
+    time= time-1;
+    //in order to have 00 when time is below 10;
+    if(time < 10) time = "0" + time;
+    //display the remain time 
+    document.getElementById("timer").innerHTML = time;
+    if(time == 0){
+        //calling the fuction after time over
+       timeOver();
+        
+    }
+},100);
+function timeOver(){
+    // stopping timer
+    clearInterval(timer);
+    //checking if the correct answers are checked 
+    if(document.getElementById("Eritrea").checked)correct++;
+    // if correct answer not checked count incorrect
+    else incorrect++;
+    if(document.getElementById("1992").checked)correct++;
+    else incorrect++;
+    if(document.getElementById("yepp").checked)correct++;
+    else incorrect++;
+    if(document.getElementById("Civil and Enviromental Eng.").checked)correct++;
+    else incorrect++;
+    alert(correct);
+    alert(incorrect);
+}}
+
+
+ window.onload = function(){
+     //hidding the content of container on window load
+     document.getElementById("container").classList.add("d-none");
+ }
+ // add event listner to the starting button 
+document.getElementById("btn1").addEventListener("click",startGame);
