@@ -87,7 +87,7 @@ var timer = setInterval(function(){
        timeOver();
         
     }
-},100);
+},1000);
 function timeOver(){
     // stopping timer
     clearInterval(timer);
