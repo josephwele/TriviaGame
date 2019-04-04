@@ -101,12 +101,12 @@ function timeOver(){
     else incorrect++;
     if(document.getElementById("Civil and Enviromental Eng.").checked)correct++;
     else incorrect++;
-    alert(correct);
-    alert(incorrect);
+    //result display 
+    document.getElementById("container").innerHTML = `<p>GameOver!!</p><p>Correct:${correct}</p><p>Incorrect:${incorrect}</p>`;
 }}
 
 
- window.onload = function(){
+ window.onload = function windLoad(){
      //hidding the content of container on window load
      document.getElementById("container").classList.add("d-none");
  }
